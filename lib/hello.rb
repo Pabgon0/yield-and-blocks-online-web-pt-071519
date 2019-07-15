@@ -1,10 +1,14 @@
 def hello_t(argument)
+  if block_given?
   i = 0
-  while i < argument.length
-    yield argument[i]
-    i = i+1
+    while i < argument.length
+      yield argument[i]
+      i = i+1
+    end
+    argument
+  else
+    puts "Hey! No block was given!"
   end
-  argument
 end
 
 hello_t(["Tim", "Tom", "Jim"]) do |name|

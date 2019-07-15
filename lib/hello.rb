@@ -4,6 +4,7 @@ def hello_t(argument)
     yield argument[i]
     i = i+1
   end
+  argument
 end
 
 hello_t(["Tim", "Tom", "Jim"]) do |name|
